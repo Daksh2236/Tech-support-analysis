@@ -31,4 +31,18 @@ public class WordCounter
             counts.put(word, counter + 1);
         }
     }
+    
+        public void printWordCounts() {
+        System.out.println("Word Usage Counts");
+    
+        if (counts.isEmpty()) {
+            System.out.println("No words were counted.");
+            return;
+        }
+    
+        for (String word : counts.keySet()) {
+            int count = counts.get(word);
+            System.out.println("'" + word + "': " + count + " times");
+        }
+    }
 }
