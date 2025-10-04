@@ -72,6 +72,6 @@ public class SupportSystem
     private void printGoodbye()
     {
         System.out.println("Nice talking to you. Bye...");
-        counter.printWordCounts();
+        printWordCounts(HashMap<String, String[]> responseMap);
     }
 }

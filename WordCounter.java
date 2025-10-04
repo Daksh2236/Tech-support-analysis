@@ -32,17 +32,19 @@ public class WordCounter
         }
     }
     
-        public void printWordCounts() {
-        System.out.println("Word Usage Counts");
-    
-        if (counts.isEmpty()) {
-            System.out.println("No words were counted.");
-            return;
-        }
-    
+    public void printWordCounts(HashMap<String, String[]> responseMap) {
+        System.out.println("Unmapped Word Usage Counts");
+        
+        boolean foundUnmappedWords = false;
+        
         for (String word : counts.keySet()) {
-            int count = counts.get(word);
-            System.out.println("'" + word + "': " + count + " times");
+            
+            // Use the containsKey() method to check the condition
+            if (!responseMap.containsKey(word)) {
+                int count = counts.get(word);
+                System.out.println("'" + word + "': " + count + " times");
+                foundUnmappedWords = true;
+            }
         }
     }
 }
